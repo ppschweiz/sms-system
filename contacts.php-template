@@ -1,0 +1,45 @@
+﻿<?php
+
+/**
+Current string data format grammar in EBNF:
+----
+NUMBER = <"1"-"9"> | {<"0"-"9">};
+NAMECHAR = <letter> | NUMBER | "-" | "+" | "(" | ")";
+NAME = NAMECHAR, {NAMECHAR};
+SEPARATOR = \r\n; (* Windows format line break format *)
+HIDENUMBERFLAG = "*";
+PHONENUMBER = NUMBER, [HIDENUMBERFLAG];
+PERSONENTRY = NAME, "=", PHONENUMBER, SEPARATOR;
+GROUP = NAME, SEPARATOR, PERSONENTRY, {PERSONENTRY}, "<", SEPARATOR;
+DATASTRING = {GROUP | PERSONENTRY};
+----
+
+Notes:
+1. PHONENUMBERs ought to be existing and start directly with the country code, example
+	BAD		0765555555
+	BAD		+41765555555
+	BAD		0041765555555
+	VALID	41765555555
+	VALID	41765555555*
+2. Don't change any identifier in the code here but solely the datastring in $string
+   Of course you can remove all example data.
+3. Don't change the line break format of the file 
+   (should be in Windows format with carriage return + line feed)
+
+
+*/
+
+class Contacts {
+
+/* change the data within the two quotes (") */
+static $string=
+"Person-1=41765555555
+Group-1
+Person-2=41765555555
+Person-3-with-hidden-number=41765555555*
+Subgroup-2
+Person-4-with-hidden-number=41765555555*
+<
+<";
+
+}
