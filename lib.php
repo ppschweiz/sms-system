@@ -27,13 +27,6 @@ return $g;
 }
   
 class SMS extends Config{
-/*  //MPA623
-  static $user = "pirate-sms";
-  static $pw = "st4l1ngr4d";
-  static $apiid = "3208029";
-  static $baseurl ="https://196.5.254.66";
-//"://api.clickatell.com";
-  */
 
   static function msgencode($t){
     $t = urlencode($t); 
