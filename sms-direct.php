@@ -1,13 +1,5 @@
 ﻿<?php
-
-/*header("Content-Type: text/html; charset=utf-8");
-ini_set  ( "mbstring.internal_encoding","utf-8");
-/*iconv_set_encoding("internal_encoding", "utf-8");
-iconv_set_encoding("output_encoding", "utf-8");
-iconv_set_encoding("input_encoding", "utf-8");*/
-  include("config.php");
-  include("lib.php");
-  
+  require_once("lib.php");
 ?>
 ﻿<html>
 <head><title>Pirate-SMS</title>

@@ -1,14 +1,5 @@
 ﻿<?php
-
-/*header("Content-Type: text/html; charset=utf-8");
-ini_set  ( "mbstring.internal_encoding","utf-8");
-/*iconv_set_encoding("internal_encoding", "utf-8");
-iconv_set_encoding("output_encoding", "utf-8");
-iconv_set_encoding("input_encoding", "utf-8");*/
-  include("contacts.php");
-  include("config.php");
-  include("lib.php");
-  
+  require_once("lib.php");
 ?>
 <html>
 <head>
@@ -28,7 +19,7 @@ iconv_set_encoding("input_encoding", "utf-8");*/
   $allContacts = addContacts();
   
   $recievers = postdef("reciever");
-  if (!empty($f)) {
+  if (!empty($recievers)) {
     $msg = postdef("content");
     $queue=array();
     $i=0;

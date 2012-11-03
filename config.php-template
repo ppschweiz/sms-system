@@ -5,4 +5,6 @@ class Config{
   static $apiid = "";
   //static $baseurl ="https://196.5.254.66";
   static $baseurl ="http://196.5.254.66";
+  
+  static $showErrors=true;
 }
